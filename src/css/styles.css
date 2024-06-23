@@ -2,6 +2,9 @@ body {
   background-color: #999aaa;
 }
 
+.container {
+  text-align: center;
+}
 #search-form {
   margin: 10px;
   padding: 10px;
@@ -32,10 +35,24 @@ body {
   letter-spacing: 0.04em;
 }
 
-button {
+.search {
   border-radius: 8px;
   padding: 8px 16px;
   width: 91px;
+  height: 40px;
+  background: #4e75ff;
+  border: #4e75ff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+
+.show-more {
+  border-radius: 8px;
+  width: 125px;
   height: 40px;
   background: #4e75ff;
   border: #4e75ff;
@@ -139,4 +156,17 @@ button:hover {
     box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0),
       200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0);
   }
+}
+.is-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }

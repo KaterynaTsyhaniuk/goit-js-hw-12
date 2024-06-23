@@ -1,23 +1,11 @@
 'use strict';
-import iziToast from 'izitoast';
-const gallery = document.getElementById('gallery');
+
+import { loader, showMoreBtn } from '../main';
 
 export function displayImages(images) {
-  gallery.innerHTML = '';
-
-  if (images.length === 0) {
-    iziToast.info({
-      title: 'Info',
-      message:
-        'Sorry, there are no images matching your search query. Please try again.',
-      position: 'topRight',
-    });
-    return;
-  }
-
-  const items = images
-    .map(image => {
-      return `
+  return images
+    .map(
+      image => `
       <div class="gallery-box">
       <div class="gallery-image">
       <a href="${image.largeImageURL}">
@@ -43,9 +31,27 @@ export function displayImages(images) {
           </div>
         </div>
       </div>
-    `;
-    })
+    `
+    )
     .join('');
+}
+// const showMore = document.querySelector('#show-more');
+// export function showBtn() {
+//   showMore.classList.remove('is-hidden');
+// }
+// export function hideBtn() {
+//   showMore.classList.add('is-hidden');
+// }
 
-  gallery.innerHTML = items;
+export function showLoader() {
+  loader.classList.remove('is-hidden');
+}
+export function hideLoader() {
+  loader.classList.add('is-hidden');
+}
+export function showBtn() {
+  showMoreBtn.classList.remove('is-hidden');
+}
+export function hideBtn() {
+  showMoreBtn.classList.add('is-hidden');
 }
