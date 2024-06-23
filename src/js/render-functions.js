@@ -35,13 +35,6 @@ export function displayImages(images) {
     )
     .join('');
 }
-// const showMore = document.querySelector('#show-more');
-// export function showBtn() {
-//   showMore.classList.remove('is-hidden');
-// }
-// export function hideBtn() {
-//   showMore.classList.add('is-hidden');
-// }
 
 export function showLoader() {
   loader.classList.remove('is-hidden');

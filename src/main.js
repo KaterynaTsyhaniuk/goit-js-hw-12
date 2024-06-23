@@ -31,6 +31,7 @@ formEl.addEventListener('submit', async event => {
   gallery.innerHTML = '';
 
   searchQuery = event.currentTarget.elements['search-query'].value.trim();
+
   if (searchQuery === '') {
     iziToast.error({
       message: 'Please enter a search term.',
@@ -42,12 +43,14 @@ formEl.addEventListener('submit', async event => {
       iconUrl: imageUrl,
       theme: 'dark',
     });
-
     return;
   }
+
   showLoader();
   hideBtn();
+
   page = 1;
+
   try {
     const res = await fetchImages(searchQuery, page);
     if (res.data.total > 0) {
@@ -72,6 +75,7 @@ formEl.addEventListener('submit', async event => {
 
     gallery.innerHTML = displayImages(res.data.hits);
     lightbox.refresh();
+
     if (res.data.total > 15) {
       showBtn();
     }
