@@ -42,6 +42,7 @@ formEl.addEventListener('submit', async event => {
       iconUrl: imageUrl,
       theme: 'dark',
     });
+
     return;
   }
   showLoader();
